@@ -1,0 +1,10 @@
+FROM elixir
+
+RUN mkdir /app
+COPY . /app
+WORKDIR /app
+
+RUN apt-get update && \
+    apt-get install -y youtube-dl
+
+CMD ["./ninecrawl"]
